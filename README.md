@@ -1,32 +1,44 @@
-# React + TypeScript + Vite
+# React-useEffect-MountApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## 概要
 
-Currently, two official plugins are available:
+Reactの`useEffect`を使用して、コンポーネントがマウントされたときに副作用処理を実行する練習アプリです。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+マウント時にコンソールへメッセージを出力し、`useEffect`の基本的な使い方を学習します。
 
-## React Compiler
+## 学習内容
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `useEffect`の基本的な使い方
+- コンポーネントのマウント
+- 空の依存配列`[]`の意味
+- マウント時の副作用処理
+- ブラウザコンソールへのログ出力
 
-## Expanding the Oxlint configuration
+## 使用技術
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 実装内容
+
+`useEffect`の依存配列に空の配列`[]`を指定することで、コンポーネントのマウント時に処理を1回実行しています。
+
+```tsx
+useEffect(() => {
+  console.log("コンポーネントがマウントされました");
+}, []);
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+画面には「マウント時の副作用」というテキストを表示します。
+
+## 起動方法
+npm install
+npm run dev
+
+ブラウザで表示した後、開発者ツールのコンソールを確認すると、
+
+コンポーネントがマウントされました
+
+と表示されます。
