@@ -4,8 +4,10 @@ import MountMessage from "./components/MountMessage";
 function App() {
   return (
     <>
-      <h1>React-useEffect-MountApp</h1>
-      <MountMessage />
+      <div className="min-h-screen border flex flex-col items-center justify-center bg-gray-500 text-black">
+        <h1 className="!text-black">React-useEffect-MountApp</h1>
+        <MountMessage />
+      </div>
     </>
   );
 }
